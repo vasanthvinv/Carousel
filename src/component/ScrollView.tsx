@@ -30,8 +30,7 @@ export const data: Data[] = [
 const ScrollView = () => {
   return (
     <div>
-      <Casts />
-      <CastDetail />
+      <><Casts /><CastDetail /></>
     </div>
   )
 }
