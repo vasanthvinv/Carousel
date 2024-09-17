@@ -1,5 +1,4 @@
 import React from "react";
-import Casts from "./Casts";
 import CastDetail from "./CastDetail";
 
 interface Data {
@@ -163,7 +162,6 @@ const ScrollView = () => {
   return (
     <div>
       <>
-        <Casts />
         <CastDetail />
       </>
     </div>

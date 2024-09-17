@@ -1,0 +1,41 @@
+// import "./Cast.css";
+// import { data } from "./ScrollView";
+// import React, { useState } from "react";
+
+// const Casts = () => {
+
+//   const [scrollPosition, setScrollPosition] = useState<number>(0);
+//   const scrollAmount = 200;
+
+//   const scrollLeft = () => {
+//     setScrollPosition(prev => Math.max(prev - scrollAmount, 0))
+//   };
+
+//   const scrollRight = () => {
+//     setScrollPosition(prev => Math.max(prev + scrollAmount, 0))
+
+//   };
+
+//   return (
+//     <div>
+//       <div className="header">The Greatest of All Time / Cast</div>
+//       <div className="Casts">
+//       <button className="left-arrow"  onClick={scrollLeft}>{"<"}</button>
+//       <button className="right-arrow" onClick={scrollRight}>{">"}</button>
+//         <div className="CastContainer"  style={{transform: `translateX(-${scrollPosition}px)`}}>
+//           {data.map((item) => (
+//             <div className="CastCard" key={item.link}>
+//               <a href={item.link} target="_blank" rel="noreferrer" >
+//                 <img src={item.image} alt={item.name} />
+//                 <div>{item.name}</div>
+//                 <div>{item.cast}</div>
+//               </a>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Casts;

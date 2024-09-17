@@ -1,7 +1,6 @@
-
-  import "./Cast.css";
 import { data } from "./ScrollView";
 import React, { useRef } from "react";
+import "./Cast.css";
 
 const CastDetail = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -28,12 +27,16 @@ const CastDetail = () => {
     <div>
       <div className="header">The Greatest of All Time / Cast</div>
       <div className="Casts">
-      <button className="left-arrow"  onClick={scrollLeft}>{"<"}</button>
-      <button className="right-arrow" onClick={scrollRight}>{">"}</button>
-        <div className="CastContainer" ref={carouselRef} >
+        <button className="left-arrow" onClick={scrollLeft}>
+          {"<"}
+        </button>
+        <button className="right-arrow" onClick={scrollRight}>
+          {">"}
+        </button>
+        <div className="CastContainer" ref={carouselRef}>
           {data.map((item) => (
             <div className="CastCard" key={item.link}>
-              <a href={item.link} target="_blank" rel="noreferrer" >
+              <a href={item.link} target="_blank" rel="noreferrer">
                 <img src={item.image} alt={item.name} />
                 <div>{item.name}</div>
                 <div>{item.cast}</div>
@@ -45,6 +48,5 @@ const CastDetail = () => {
     </div>
   );
 };
-
 
 export default CastDetail;
