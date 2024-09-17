@@ -1,41 +1,38 @@
 import "./Cast.css";
 import { data } from "./ScrollView";
-import React, { useState } from "react";
+import React, {useRef } from "react";
 
 const Casts = () => {
-  const [scrollPosition, setScrollPosition] = useState<number>(0);
-
-  const scrollLeft = () => {
-    const container = document.querySelector(".CastContainer") as HTMLElement;
-setScrollPosition((prevIndex) => (prevIndex - 45) % 90);
-      container.style.transform = `translateX(-${scrollPosition}%)`;
-      console.log(scrollPosition);
-      
-  };
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const scrollAmount = 600;
 
   const scrollRight = () => {
-    const container = document.querySelector(".CastContainer") as HTMLElement;
-    container.style.transform = `translateX(-${0 + scrollPosition }%)`;
-    setScrollPosition( (prevIndex) => (prevIndex + 45 ) % 90);
+    if (containerRef.current) {
+      containerRef.current.scrollLeft += scrollAmount;
+    }
+  };
 
-    console.log(scrollPosition);
+  const scrollLeft = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollLeft -= scrollAmount;
+    }
   };
 
   return (
     <div>
       <div className="header">The Greatest of All Time / Cast</div>
       <div className="Casts">
-        <button className="left-arrow" onClick={scrollLeft}>
+       {  <button className="left-arrow" onClick={scrollLeft}>
           {"<"}
-        </button>
+        </button>}
         <button className="right-arrow" onClick={scrollRight}>
           {">"}
         </button>
-        <div className="CastContainer">
+        <div className="CastContainer" ref={containerRef}>
           {data.map((item) => (
             <div className="CastCard" key={item.link}>
               <a href={item.link} target="_blank" rel="noreferrer">
-                <img src={item.image} alt={item.name} />
+                <img src={item.image} alt={item.name} className="image" />
                 <div>{item.name}</div>
                 <div>{item.cast}</div>
               </a>

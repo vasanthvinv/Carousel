@@ -1,21 +1,22 @@
 .Casts {
-  overflow-x: scroll;
-  scrollbar-width: none;
+  position: relative;
+  overflow: hidden; 
   padding: 10px;
   height: 220px;
   margin-top: 20px;
-  margin-left: 40px;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; 
+  width: 50%;
 }
 
 .CastContainer {
   display: flex;
- 
+  overflow-x: scroll;
+  scrollbar-width: none; 
 }
 
 .CastCard {
-  flex: 0 0 130px;
-  width: 200px;
+  flex: 0 0 auto; 
+  width: 170px;
   margin: 10px;
   text-align: center;
 }
@@ -39,21 +40,27 @@
   font-weight: bold;
   margin-top: 10px;
 }
-.left-arrow {
+
+.left-arrow, .right-arrow {
   position: absolute;
   background-color: white;
   font-size: 24px;
-  border-radius:30px;
-  left: 40px;
-  margin-top: 30px;
+  border-radius: 30px;
   z-index: 1;
 }
+
+.left-arrow {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .right-arrow {
-  position: absolute;
-  background-color: white;
-  border-radius: 40px;
-  font-size: 24px;
-  right: 20px;
-  margin-top: 30px;
-  z-index: 1;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.image{
+  height: 150px;
 }
